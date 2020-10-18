@@ -6,7 +6,6 @@ import java.io.Serializable;
 import java.util.UUID;
 
 import org.bouncycastle.util.Arrays;
-import org.hibernate.HibernateException;
 import org.hibernate.engine.spi.SharedSessionContractImplementor;
 import org.hibernate.id.IdentifierGenerator;
 
@@ -18,8 +17,8 @@ public class UuidGenerator implements IdentifierGenerator {
     public static final UUID zeroUuid = new UUID(0,0);
 
     @Override
-    public Serializable generate(final SharedSessionContractImplementor sharedSessionContractImplementor, final Object object)
-            throws HibernateException {
+    public Serializable generate(final SharedSessionContractImplementor sharedSessionContractImplementor,
+            final Object object) {
 
         final User user = (User) object;
 
